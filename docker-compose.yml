@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    image: alphyron/dayofdragons
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 27015:27015/udp
+      - 27015:27015/tcp
+      - 27016:27016/udp
+      - 27016:27016/tcp
+      - 7777:7777/udp
+      - 7778:7778/udp
+      - 4380:4380/udp
+    environment:
+      - SERVER_NAME=Alphys Server
+
+
